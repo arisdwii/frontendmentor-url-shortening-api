@@ -319,6 +319,7 @@ ul {
   color: var(--color-very-dark-violet);
   font-weight: 500;
   padding: 1rem 1rem 0.5rem;
+  display: inline-block;
 }
 
 .link-output {
@@ -338,9 +339,23 @@ ul {
 }
 
 .link-short {
+  width: 100%;
+  max-width: 380px;
+  background-color: transparent;
   color: var(--color-cyan);
   font-weight: 500;
   padding-block: 0.5rem;
+  border: none;
+  outline: none;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  pointer-events: none;
+  user-select: none;
+}
+
+.link-short::selection {
+  background-color: transparent;
+  overflow: hidden;
 }
 
 .btn-copy {
@@ -675,12 +690,6 @@ ul {
 
   .link-output::before {
     content: none;
-  }
-
-  .link-short {
-    max-width: 200px;
-    overflow: hidden;
-    text-overflow: ellipsis;
   }
 
   .btn-copy {
